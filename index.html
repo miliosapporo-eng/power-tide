@@ -82,11 +82,9 @@
     <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 flex items-center gap-2 group cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <i data-lucide="camera" class="h-8 w-8 text-amber-500 group-hover:rotate-12 transition-transform"></i>
-                    <span class="font-vogue font-bold text-3xl tracking-tight text-white italic">
-                        power tide
-                    </span>
+                <div class="flex-shrink-0 flex items-center group cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <!-- ロゴ画像に変更 -->
+                    <img src="images/powertide.png" alt="power tide" class="h-10 w-auto object-contain hover:opacity-80 transition-opacity">
                 </div>
                 
                 <!-- Desktop Menu -->
@@ -164,10 +162,15 @@
             
             <!-- Logo Replacement -->
             <div class="mb-12 flex justify-center">
+                <!-- 
+                    mix-blend-screen: 黒を透過させるブレンドモード
+                    contrast-125: コントラストを上げて、画像の「濃いグレー」部分も黒として透過させる
+                    brightness-110: ロゴの輝きを強める
+                -->
                 <img 
                 src="images/hero.png" 
                 alt="POWER TIDE" 
-                class="w-full max-w-[800px] h-auto object-contain mix-blend-screen opacity-90 hover:opacity-100 transition-opacity duration-700 drop-shadow-[0_0_20px_rgba(245,158,11,0.3)]"
+                class="w-full max-w-[800px] h-auto object-contain mix-blend-screen opacity-90 hover:opacity-100 transition-opacity duration-700 drop-shadow-[0_0_20px_rgba(245,158,11,0.3)] contrast-125 brightness-110"
                 />
                 <!-- Fallback Text Logo (Hidden) -->
                 <h1 id="text-logo" class="hidden text-6xl md:text-8xl lg:text-9xl font-vogue font-bold text-white tracking-tighter mb-8 leading-[0.9]">
@@ -178,7 +181,6 @@
             
             <p class="mt-8 max-w-xl mx-auto text-sm md:text-base text-slate-400 mb-12 leading-loose font-light tracking-wide">
                 その一瞬は、永遠の輝き。<br />
-                札幌・小樽の夜景と、洗練されたモデルたち。<br />
                 大人のためのプレミアムな撮影体験を。
             </p>
             
