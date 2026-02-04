@@ -92,6 +92,33 @@
         .animate-spin-y {
             animation: spin-y 3s linear infinite;
         }
+
+        /* Flash Effect Styles */
+        .hero-slide-image {
+            opacity: 0;
+            transition: opacity 0.1s ease-out, transform 0.2s ease-out;
+            transform: scale(1.05);
+            filter: grayscale(100%) contrast(1.2) brightness(0.8);
+        }
+        .hero-slide-image.active {
+            opacity: 0.6; /* 少し透けさせることで黒背景と馴染ませる */
+            transform: scale(1);
+            filter: grayscale(0%) contrast(1.1) brightness(1);
+        }
+        
+        #flash-overlay {
+            opacity: 0;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+        .flash-active {
+            animation: flash-animation 0.15s ease-out forwards;
+        }
+        
+        @keyframes flash-animation {
+            0% { opacity: 0.8; background-color: white; }
+            100% { opacity: 0; }
+        }
     </style>
 </head>
 <body class="selection:bg-amber-500 selection:text-black">
@@ -163,17 +190,32 @@
 
     <!-- Hero Section -->
     <div class="relative pt-20 pb-16 md:pt-32 md:pb-24 lg:pb-32 overflow-hidden bg-black flex items-center min-h-[80vh]">
-        <div class="absolute inset-0 z-0">
-           <div class="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-900 via-black to-black opacity-80"></div>
-           <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-amber-900/10 to-transparent"></div>
+        <!-- Background Logic -->
+        <div class="absolute inset-0 z-0 bg-black">
+           <!-- Dynamic Slideshow Container -->
+           <div id="hero-slideshow" class="absolute inset-0 overflow-hidden">
+               <!-- Images will be injected/controlled by JS -->
+               <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1920&auto=format&fit=crop" class="hero-slide-image absolute inset-0 w-full h-full object-cover object-top" alt="">
+               <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1920&auto=format&fit=crop" class="hero-slide-image absolute inset-0 w-full h-full object-cover object-center" alt="">
+               <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1920&auto=format&fit=crop" class="hero-slide-image absolute inset-0 w-full h-full object-cover object-center" alt="">
+               <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=1920&auto=format&fit=crop" class="hero-slide-image absolute inset-0 w-full h-full object-cover object-center" alt="">
+               <img src="https://images.unsplash.com/photo-1620553330541-845f77732e98?q=80&w=1920&auto=format&fit=crop" class="hero-slide-image absolute inset-0 w-full h-full object-cover object-center" alt="">
+           </div>
+           
+           <!-- Flash Overlay -->
+           <div id="flash-overlay" class="absolute inset-0 bg-white z-10"></div>
+           
+           <!-- Dark Gradient Overlay for Text Readability -->
+           <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 z-20"></div>
+           <div class="absolute inset-0 bg-black/30 z-20"></div>
         </div>
         
-        <div class="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-amber-500/5 blur-[80px]"></div>
-        <div class="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-amber-600/5 blur-[100px]"></div>
+        <div class="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-amber-500/5 blur-[80px] z-30"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-amber-600/5 blur-[100px] z-30"></div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="relative z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="inline-block mb-8 border-b border-amber-500/50 pb-2">
-                <h2 class="text-amber-500 font-vogue tracking-[0.3em] text-xs md:text-sm uppercase font-bold">
+                <h2 class="text-amber-500 font-vogue tracking-[0.3em] text-xs md:text-sm uppercase font-bold drop-shadow-md">
                     Premium Photo Session in Hokkaido
                 </h2>
             </div>
@@ -188,7 +230,7 @@
                 <img 
                 src="images/hero.png" 
                 alt="POWER TIDE" 
-                class="w-full max-w-[800px] h-auto object-contain mix-blend-screen opacity-90 hover:opacity-100 transition-opacity duration-700 drop-shadow-[0_0_20px_rgba(245,158,11,0.3)] contrast-125 brightness-110"
+                class="w-full max-w-[800px] h-auto object-contain mix-blend-screen opacity-90 hover:opacity-100 transition-opacity duration-700 drop-shadow-[0_0_20px_rgba(245,158,11,0.5)] contrast-150 brightness-125"
                 />
                 <!-- Fallback Text Logo (Hidden) -->
                 <h1 id="text-logo" class="hidden text-6xl md:text-8xl lg:text-9xl font-vogue font-bold text-white tracking-tighter mb-8 leading-[0.9]">
@@ -197,13 +239,13 @@
                 </h1>
             </div>
             
-            <p class="mt-8 max-w-xl mx-auto text-sm md:text-base text-slate-400 mb-12 leading-loose font-light tracking-wide">
+            <p class="mt-8 max-w-xl mx-auto text-sm md:text-base text-slate-300 mb-12 leading-loose font-light tracking-wide drop-shadow-lg bg-black/20 backdrop-blur-sm p-4 rounded-lg border border-white/5">
                 その一瞬は、永遠の輝き。<br />
                 大人のためのプレミアムな撮影体験を。
             </p>
             
             <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <button class="group px-10 py-4 bg-transparent border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black transition-all duration-500 ease-out font-vogue font-bold tracking-widest text-sm flex items-center justify-center gap-2">
+                <button class="group px-10 py-4 bg-transparent border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black transition-all duration-500 ease-out font-vogue font-bold tracking-widest text-sm flex items-center justify-center gap-2 backdrop-blur-sm">
                     VIEW SCHEDULE <span class="group-hover:translate-x-1 transition-transform">→</span>
                 </button>
             </div>
@@ -892,6 +934,40 @@
             document.getElementById(modalId).classList.remove('flex');
             document.body.classList.remove('modal-open');
         }
+
+        // === Flash Slideshow Control ===
+        const slides = document.querySelectorAll('.hero-slide-image');
+        const flashOverlay = document.getElementById('flash-overlay');
+        
+        function triggerFlash() {
+            // Randomly select a slide
+            const randomIndex = Math.floor(Math.random() * slides.length);
+            const selectedSlide = slides[randomIndex];
+            
+            // Activate Image
+            // Reset all slides first to be sure
+            slides.forEach(s => s.classList.remove('active'));
+            selectedSlide.classList.add('active');
+            
+            // Trigger Flash
+            flashOverlay.classList.remove('flash-active');
+            void flashOverlay.offsetWidth; // Trigger reflow
+            flashOverlay.classList.add('flash-active');
+            
+            // Schedule fade out
+            setTimeout(() => {
+                selectedSlide.classList.remove('active');
+            }, 300); // Image visible duration (short for dynamic effect)
+
+            // Schedule next flash (random interval for erratic feel)
+            // Sometimes fast burst, sometimes slow
+            const nextInterval = Math.random() > 0.7 ? 200 : Math.random() * 2000 + 800;
+            setTimeout(triggerFlash, nextInterval);
+        }
+
+        // Start the slideshow after a slight delay
+        setTimeout(triggerFlash, 1000);
+
     </script>
 </body>
 </html>
