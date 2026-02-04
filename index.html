@@ -96,12 +96,15 @@
         /* Flash Effect Styles */
         .hero-slide-image {
             opacity: 0;
-            transition: opacity 0.1s ease-out, transform 0.2s ease-out;
+            /* 消えるとき（ディゾルブ）の設定：時間を長くして残像感を出す */
+            transition: opacity 1.5s ease-out, transform 1.5s ease-out;
             transform: scale(1.05);
             filter: grayscale(100%) contrast(1.2) brightness(0.8);
         }
         .hero-slide-image.active {
             opacity: 0.6; /* 少し透けさせることで黒背景と馴染ませる */
+            /* 現れるとき（フラッシュ）の設定：一瞬で表示 */
+            transition: opacity 0.05s ease-out, transform 0.05s ease-out;
             transform: scale(1);
             filter: grayscale(0%) contrast(1.1) brightness(1);
         }
@@ -959,9 +962,9 @@
                 selectedSlide.classList.remove('active');
             }, 300); // Image visible duration (short for dynamic effect)
 
-            // Schedule next flash (random interval for erratic feel)
-            // Sometimes fast burst, sometimes slow
-            const nextInterval = Math.random() > 0.7 ? 200 : Math.random() * 2000 + 800;
+            // Schedule next flash (Constant rhythm)
+            // Fixed interval for steady rhythm (2000ms = 2 seconds)
+            const nextInterval = 2000; 
             setTimeout(triggerFlash, nextInterval);
         }
 
