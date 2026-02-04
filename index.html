@@ -192,38 +192,6 @@
         </div>
     </div>
 
-    <!-- News Feed Section -->
-    <section class="py-12 bg-black border-t border-b border-zinc-900/50 relative z-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
-                <div class="shrink-0 flex items-center gap-3">
-                    <h2 class="text-xl md:text-2xl font-vogue text-amber-500 italic tracking-wide">
-                        LATEST NEWS
-                    </h2>
-                    <div class="h-px w-12 bg-zinc-800 md:hidden"></div>
-                </div>
-                
-                <div class="flex-1 w-full">
-                    <ul id="news-list" class="space-y-3">
-                        <!-- News items will be injected here by JS -->
-                        <li class="text-slate-500 text-sm animate-pulse">Loading news...</li>
-                    </ul>
-                </div>
-                
-                <div class="hidden lg:block shrink-0">
-                    <button class="text-[10px] text-slate-500 hover:text-amber-500 transition-colors uppercase tracking-[0.2em] flex items-center gap-2 group border border-zinc-800 px-4 py-2 hover:border-amber-500/50">
-                        View Archive <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </button>
-                </div>
-            </div>
-            <div class="lg:hidden mt-6 text-center">
-                <button class="text-[10px] text-slate-500 hover:text-amber-500 transition-colors uppercase tracking-[0.2em] inline-flex items-center gap-2">
-                    View Archive <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
     <!-- Concept Section -->
     <section id="concept" class="py-24 bg-zinc-950 relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-900/50 to-transparent"></div>
@@ -386,16 +354,24 @@
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-1">
-                <!-- Cast 1 -->
+                <!-- Cast 1: YURI AIKAWA (Guest Model - Cool/City) -->
                 <div class="group relative aspect-[3/4] cursor-pointer overflow-hidden bg-zinc-900">
-                    <div class="absolute inset-0 bg-gradient-to-br from-amber-500 to-yellow-300 opacity-20 group-hover:opacity-30 transition-opacity duration-700"></div>
-                    <div class="absolute inset-0 flex flex-col justify-between p-6 bg-black/20 group-hover:bg-transparent transition-colors">
+                    <!-- Model Image -->
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop" 
+                         alt="YURI AIKAWA" 
+                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    
+                    <!-- Color Overlay (Subtler now) -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-amber-500/40 to-black/60 mix-blend-overlay opacity-60"></div>
+                    
+                    <!-- Text Overlay -->
+                    <div class="absolute inset-0 flex flex-col justify-between p-6 bg-gradient-to-t from-black/90 via-black/20 to-transparent">
                         <div class="flex justify-between items-start opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-2 group-hover:translate-y-0">
-                            <span class="text-[10px] text-white border border-white/30 px-2 py-1 uppercase tracking-widest">Guest Model</span>
+                            <span class="text-[10px] text-white border border-white/30 px-2 py-1 uppercase tracking-widest backdrop-blur-sm">Guest Model</span>
                         </div>
                         <div>
-                            <h3 class="text-3xl font-vogue text-white opacity-90 group-hover:text-amber-400 transition-colors leading-none mb-1">
-                                YURI<br/><span class="text-lg text-white/50">AIKAWA</span>
+                            <h3 class="text-3xl font-vogue text-white opacity-100 group-hover:text-amber-400 transition-colors leading-none mb-1 drop-shadow-lg">
+                                YURI<br/><span class="text-lg text-white/70">AIKAWA</span>
                             </h3>
                             <p class="text-[10px] text-slate-300 uppercase tracking-widest mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                                 From Tokyo
@@ -405,16 +381,23 @@
                     <div class="absolute bottom-0 left-0 w-full h-1 bg-amber-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 </div>
 
-                <!-- Cast 2 -->
+                <!-- Cast 2: MINA SAKURAGI (Idol - Cute/Bright) -->
                 <div class="group relative aspect-[3/4] cursor-pointer overflow-hidden bg-zinc-900 md:mt-12">
-                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 opacity-20 group-hover:opacity-30 transition-opacity duration-700"></div>
-                    <div class="absolute inset-0 flex flex-col justify-between p-6 bg-black/20 group-hover:bg-transparent transition-colors">
+                    <!-- Model Image -->
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1887&auto=format&fit=crop" 
+                         alt="MINA SAKURAGI" 
+                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    
+                    <!-- Color Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/40 to-black/60 mix-blend-overlay opacity-60"></div>
+
+                    <div class="absolute inset-0 flex flex-col justify-between p-6 bg-gradient-to-t from-black/90 via-black/20 to-transparent">
                         <div class="flex justify-between items-start opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-2 group-hover:translate-y-0">
-                             <span class="text-[10px] text-white border border-white/30 px-2 py-1 uppercase tracking-widest">Idol</span>
+                             <span class="text-[10px] text-white border border-white/30 px-2 py-1 uppercase tracking-widest backdrop-blur-sm">Idol</span>
                         </div>
                         <div>
-                            <h3 class="text-3xl font-vogue text-white opacity-90 group-hover:text-amber-400 transition-colors leading-none mb-1">
-                                MINA<br/><span class="text-lg text-white/50">SAKURAGI</span>
+                            <h3 class="text-3xl font-vogue text-white opacity-100 group-hover:text-amber-400 transition-colors leading-none mb-1 drop-shadow-lg">
+                                MINA<br/><span class="text-lg text-white/70">SAKURAGI</span>
                             </h3>
                             <p class="text-[10px] text-slate-300 uppercase tracking-widest mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                                 From Sapporo
@@ -424,16 +407,23 @@
                     <div class="absolute bottom-0 left-0 w-full h-1 bg-amber-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 </div>
 
-                <!-- Cast 3 -->
+                <!-- Cast 3: HINA (Cosplayer - Pop/Character) -->
                 <div class="group relative aspect-[3/4] cursor-pointer overflow-hidden bg-zinc-900">
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-400 opacity-20 group-hover:opacity-30 transition-opacity duration-700"></div>
-                    <div class="absolute inset-0 flex flex-col justify-between p-6 bg-black/20 group-hover:bg-transparent transition-colors">
+                    <!-- Model Image -->
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1887&auto=format&fit=crop" 
+                         alt="HINA" 
+                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    
+                    <!-- Color Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-500/40 to-black/60 mix-blend-overlay opacity-60"></div>
+
+                    <div class="absolute inset-0 flex flex-col justify-between p-6 bg-gradient-to-t from-black/90 via-black/20 to-transparent">
                         <div class="flex justify-between items-start opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-2 group-hover:translate-y-0">
-                             <span class="text-[10px] text-white border border-white/30 px-2 py-1 uppercase tracking-widest">Cosplayer</span>
+                             <span class="text-[10px] text-white border border-white/30 px-2 py-1 uppercase tracking-widest backdrop-blur-sm">Cosplayer</span>
                         </div>
                         <div>
-                            <h3 class="text-3xl font-vogue text-white opacity-90 group-hover:text-amber-400 transition-colors leading-none mb-1">
-                                HINA<br/><span class="text-lg text-white/50"></span>
+                            <h3 class="text-3xl font-vogue text-white opacity-100 group-hover:text-amber-400 transition-colors leading-none mb-1 drop-shadow-lg">
+                                HINA<br/><span class="text-lg text-white/70"></span>
                             </h3>
                             <p class="text-[10px] text-slate-300 uppercase tracking-widest mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                                 From Sapporo
@@ -443,16 +433,23 @@
                     <div class="absolute bottom-0 left-0 w-full h-1 bg-amber-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 </div>
 
-                <!-- Cast 4 -->
+                <!-- Cast 4: REMI (Gravure - Beauty) -->
                 <div class="group relative aspect-[3/4] cursor-pointer overflow-hidden bg-zinc-900 md:mt-12">
-                    <div class="absolute inset-0 bg-gradient-to-br from-rose-500 to-red-600 opacity-20 group-hover:opacity-30 transition-opacity duration-700"></div>
-                    <div class="absolute inset-0 flex flex-col justify-between p-6 bg-black/20 group-hover:bg-transparent transition-colors">
+                    <!-- Model Image -->
+                    <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=1727&auto=format&fit=crop" 
+                         alt="REMI" 
+                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    
+                    <!-- Color Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-rose-500/40 to-black/60 mix-blend-overlay opacity-60"></div>
+
+                    <div class="absolute inset-0 flex flex-col justify-between p-6 bg-gradient-to-t from-black/90 via-black/20 to-transparent">
                         <div class="flex justify-between items-start opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-2 group-hover:translate-y-0">
-                             <span class="text-[10px] text-white border border-white/30 px-2 py-1 uppercase tracking-widest">Gravure</span>
+                             <span class="text-[10px] text-white border border-white/30 px-2 py-1 uppercase tracking-widest backdrop-blur-sm">Gravure</span>
                         </div>
                         <div>
-                            <h3 class="text-3xl font-vogue text-white opacity-90 group-hover:text-amber-400 transition-colors leading-none mb-1">
-                                REMI<br/><span class="text-lg text-white/50"></span>
+                            <h3 class="text-3xl font-vogue text-white opacity-100 group-hover:text-amber-400 transition-colors leading-none mb-1 drop-shadow-lg">
+                                REMI<br/><span class="text-lg text-white/70"></span>
                             </h3>
                             <p class="text-[10px] text-slate-300 uppercase tracking-widest mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                                 From Osaka
@@ -777,109 +774,6 @@
             document.getElementById(modalId).classList.remove('flex');
             document.body.classList.remove('modal-open');
         }
-
-        // === News Feed Fetcher ===
-        const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSnmP5sQrgcBZXG5Fkek0guX5S_z2E7v3RIYvJ8vaxJITY6c8jnbeWw3izl2XzEbWQaLmD4x4zlLikl/pub?output=csv";
-
-        // Default mock data in case fetch fails or URL is empty
-        const defaultNews = [
-            {
-                id: 1,
-                date: '2025.10.01',
-                category: 'EVENT',
-                title: '10/12 小樽運河撮影会の予約受付を開始しました。',
-            },
-            {
-                id: 2,
-                date: '2025.09.25',
-                category: 'CASTING',
-                title: '東京ゲストモデル「愛川 ゆり」の出演が決定しました。',
-            },
-            {
-                id: 3,
-                date: '2025.09.20',
-                category: 'UPDATE',
-                title: '公式サイトをリニューアルオープンしました。',
-            },
-        ];
-
-        async function fetchNews() {
-            const listElement = document.getElementById('news-list');
-            
-            if (!GOOGLE_SHEET_CSV_URL) {
-                renderNews(defaultNews);
-                return;
-            }
-
-            try {
-                const response = await fetch(GOOGLE_SHEET_CSV_URL);
-                const text = await response.text();
-                
-                // Simple CSV Parser
-                const rows = text.trim().split('\n').slice(1); // Remove header
-                
-                if (rows.length === 0) {
-                    renderNews(defaultNews);
-                    return;
-                }
-
-                const items = rows.map((row, index) => {
-                    const cols = row.split(',');
-                    if (cols.length < 4) return null;
-
-                    return {
-                        id: cols[0].trim() || index,
-                        date: cols[1].trim(),
-                        category: cols[2].trim(),
-                        // Join remaining columns for title in case of commas
-                        title: cols.slice(3).join(',').trim().replace(/^"|"$/g, '') 
-                    };
-                }).filter(item => item !== null);
-
-                renderNews(items);
-
-            } catch (error) {
-                console.error("News fetch failed:", error);
-                renderNews(defaultNews);
-            }
-        }
-
-        function renderNews(items) {
-            const listElement = document.getElementById('news-list');
-            listElement.innerHTML = ''; // Clear loading/existing
-
-            items.forEach(news => {
-                let categoryColorClass = 'text-slate-400 border-slate-600 bg-slate-800';
-                if (news.category === 'EVENT') categoryColorClass = 'text-amber-500 border-amber-500/50 bg-amber-500/10';
-                if (news.category === 'CASTING') categoryColorClass = 'text-purple-400 border-purple-400/50 bg-purple-400/10';
-                if (news.category === 'UPDATE') categoryColorClass = 'text-blue-400 border-blue-400/50 bg-blue-400/10';
-
-                const li = document.createElement('li');
-                li.className = "flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 text-sm border-b border-zinc-900 pb-3 last:border-0 last:pb-0 hover:bg-zinc-900/30 transition-colors cursor-pointer group rounded-sm p-1";
-                
-                li.innerHTML = `
-                    <div class="flex items-center gap-3 shrink-0">
-                      <span class="font-mono text-slate-500 text-xs">${news.date}</span>
-                      <span class="text-[10px] font-bold px-2 py-0.5 rounded-sm border transition-colors w-16 text-center ${categoryColorClass}">
-                        ${news.category}
-                      </span>
-                    </div>
-                    <p class="text-slate-300 group-hover:text-white transition-colors truncate font-light tracking-wide">
-                      ${news.title}
-                    </p>
-                    <div class="hidden sm:block ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-amber-500">
-                      <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                    </div>
-                `;
-                listElement.appendChild(li);
-            });
-            
-            // Re-run lucide for newly added icons
-            lucide.createIcons();
-        }
-
-        // Initialize News
-        fetchNews();
     </script>
 </body>
 </html>
