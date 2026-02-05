@@ -226,14 +226,14 @@
             <!-- Logo Replacement -->
             <div class="mb-12 flex justify-center">
                 <!-- 
-                    mix-blend-screen: 黒を透過させるブレンドモード
-                    contrast-125: コントラストを上げて、画像の「濃いグレー」部分も黒として透過させる
-                    brightness-110: ロゴの輝きを強める
+                    mix-blend-screen: 黒を透過させるブレンドモード（必須）
+                    contrast-200: コントラストを強くして、画像の「濃いグレー」部分も黒として完全に透過させる
+                    brightness-110: ロゴの輝きを調整
                 -->
                 <img 
                 src="images/hero.png" 
                 alt="POWER TIDE" 
-                class="w-full max-w-[800px] h-auto object-contain mix-blend-screen opacity-40 hover:opacity-100 transition-opacity duration-700 drop-shadow-[0_0_20px_rgba(245,158,11,0.5)] contrast-200 brightness-110"
+                class="w-full max-w-[800px] h-auto object-contain mix-blend-screen opacity-90 hover:opacity-100 transition-opacity duration-700 drop-shadow-[0_0_20px_rgba(245,158,11,0.5)] contrast-200 brightness-110"
                 />
                 <!-- Fallback Text Logo (Hidden) -->
                 <h1 id="text-logo" class="hidden text-6xl md:text-8xl lg:text-9xl font-vogue font-bold text-white tracking-tighter mb-8 leading-[0.9]">
@@ -368,9 +368,9 @@
                             <span class="text-xs font-bold tracking-widest uppercase text-amber-500 animate-pulse">
                                 残枠わずか
                             </span>
-                            <a href="detail/20251012.aikawa.html" class="px-10 py-4 text-xs font-bold tracking-[0.2em] transition-all font-vogue bg-white text-black hover:bg-amber-500 hover:text-white border border-transparent shadow-lg text-center inline-block">
+                            <button class="px-10 py-4 text-xs font-bold tracking-[0.2em] transition-all font-vogue bg-white text-black hover:bg-amber-500 hover:text-white border border-transparent shadow-lg">
                                 DETAILS
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -752,22 +752,41 @@
                     </div>
                 </div>
 
-                <!-- Partner Links -->
-                <div class="flex-1 w-full">
-                    <div class="flex flex-wrap justify-center md:justify-end gap-8 items-center opacity-60 hover:opacity-100 transition-opacity duration-500">
-                        <a href="https://design4qol.com" target="_blank" rel="noopener noreferrer" class="group">
-                            <img src="images/logo2.png" alt="design4qol" class="h-6 md:h-8 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100">
-                        </a>
-                        <a href="https://ephi.design4qol.com" target="_blank" rel="noopener noreferrer" class="group">
-                            <img src="images/ephi.png" alt="ephi" class="h-6 md:h-8 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100">
-                        </a>
-                        <a href="https://savepoint.design4qol.com" target="_blank" rel="noopener noreferrer" class="group">
-                            <img src="images/savepoint_sq.png" alt="savepoint" class="h-6 md:h-8 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100">
-                        </a>
-                        <a href="https://studioushio.design4qol.com" target="_blank" rel="noopener noreferrer" class="group">
-                            <img src="images/studioushio.png" alt="studio ushio" class="h-6 md:h-8 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100">
-                        </a>
+                <div class="flex gap-20">
+                    <div>
+                        <h4 class="font-bold text-white text-[10px] mb-6 uppercase tracking-widest text-amber-600">Legal</h4>
+                        <ul class="space-y-4 text-[10px] font-bold tracking-widest uppercase text-zinc-500">
+                            <li>
+                                <button onclick="openModal('terms-modal')" class="hover:text-white transition-colors text-left uppercase">
+                                    Terms of Service
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="openModal('privacy-modal')" class="hover:text-white transition-colors text-left uppercase">
+                                    Privacy Policy
+                                </button>
+                            </li>
+                            <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                        </ul>
                     </div>
+                </div>
+            </div>
+
+            <!-- Partner Links -->
+            <div class="mt-16 border-t border-zinc-900 pt-10">
+                <div class="flex flex-wrap justify-center gap-8 md:gap-12 items-center opacity-60 hover:opacity-100 transition-opacity duration-500">
+                    <a href="https://design4qol.com" target="_blank" rel="noopener noreferrer" class="group">
+                        <img src="images/logo2.png" alt="design4qol" class="h-6 md:h-8 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100">
+                    </a>
+                    <a href="https://ephi.design4qol.com" target="_blank" rel="noopener noreferrer" class="group">
+                        <img src="images/ephi.png" alt="ephi" class="h-6 md:h-8 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100">
+                    </a>
+                    <a href="https://savepoint.design4qol.com" target="_blank" rel="noopener noreferrer" class="group">
+                        <img src="images/savepoint_sq.png" alt="savepoint" class="h-6 md:h-8 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100">
+                    </a>
+                    <a href="https://studioushio.design4qol.com" target="_blank" rel="noopener noreferrer" class="group">
+                        <img src="images/studioushio.png" alt="studio ushio" class="h-6 md:h-8 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100">
+                    </a>
                 </div>
             </div>
             
@@ -912,9 +931,29 @@
     </div>
 
     <script>
+        // === Lucide Icons ===
         lucide.createIcons();
 
-        // Modals
+        // === Mobile Menu ===
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const mobileIcon = mobileMenuBtn.querySelector('i');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Toggle icon (optional, simplistic approach)
+            // Ideally replace lucide icon content, but simple toggle suffices
+        });
+
+        // Close menu on link click
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // === Modals ===
         function openModal(modalId) {
             document.getElementById(modalId).classList.remove('hidden');
             document.getElementById(modalId).classList.add('flex');
@@ -926,6 +965,40 @@
             document.getElementById(modalId).classList.remove('flex');
             document.body.classList.remove('modal-open');
         }
+
+        // === Flash Slideshow Control ===
+        const slides = document.querySelectorAll('.hero-slide-image');
+        const flashOverlay = document.getElementById('flash-overlay');
+        
+        function triggerFlash() {
+            // Randomly select a slide
+            const randomIndex = Math.floor(Math.random() * slides.length);
+            const selectedSlide = slides[randomIndex];
+            
+            // Activate Image
+            // Reset all slides first to be sure
+            slides.forEach(s => s.classList.remove('active'));
+            selectedSlide.classList.add('active');
+            
+            // Trigger Flash
+            flashOverlay.classList.remove('flash-active');
+            void flashOverlay.offsetWidth; // Trigger reflow
+            flashOverlay.classList.add('flash-active');
+            
+            // Schedule fade out
+            setTimeout(() => {
+                selectedSlide.classList.remove('active');
+            }, 300); // Image visible duration (short for dynamic effect)
+
+            // Schedule next flash (Constant rhythm)
+            // Fixed interval for steady rhythm (2000ms = 2 seconds)
+            const nextInterval = 2000; 
+            setTimeout(triggerFlash, nextInterval);
+        }
+
+        // Start the slideshow after a slight delay
+        setTimeout(triggerFlash, 1000);
+
     </script>
 </body>
 </html>
